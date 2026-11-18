@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REWEAR — Mặc nhiều hơn, lãng phí ít hơn</title>
+<style>
+:root{--green:#315b45;--green2:#527b60;--mint:#e8f0e8;--cream:#f7f5ef;--ink:#26352c;--muted:#718075;--line:#e3e8e0;--white:#fff;--orange:#d98b55}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;margin:auto;padding:0 24px}.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-size:25px;font-weight:900;letter-spacing:2px;color:var(--green)}.logo span{color:var(--orange)}.navlinks{display:flex;gap:25px;color:#526257;font-size:14px}.navlinks a{color:inherit;text-decoration:none}.navlinks a:hover{color:var(--green)}.navright{display:flex;align-items:center;gap:12px}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 16px;color:var(--green);font-weight:650}.primary{background:var(--green);color:white;border:0;border-radius:999px;padding:12px 19px;font-weight:700}.primary:hover{background:#244632}.hero{padding:54px 0 42px;background:linear-gradient(115deg,#edf3eb 0%,#f8f5ec 72%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:36px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--green2);font-weight:800}.hero h1{font-size:clamp(38px,5vw,62px);line-height:1.04;margin:15px 0 18px;letter-spacing:-2px}.hero h1 em{font-style:normal;color:var(--green2)}.hero p{font-size:17px;line-height:1.7;color:#637267;max-width:570px}.hero-actions{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}.secondary{background:white;border:1px solid #d7e1d6;border-radius:999px;padding:12px 19px;color:var(--green);font-weight:700}.hero-art{min-height:330px;border-radius:28px;background:linear-gradient(145deg,#dce8dc,#f3e9d8);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.hanger{font-size:145px;filter:drop-shadow(0 14px 12px #4c604022);transform:rotate(-8deg)}.floating{position:absolute;background:#fff;border:1px solid #e7ece5;border-radius:16px;padding:13px 16px;box-shadow:0 12px 30px #324a3515;font-size:13px}.float1{top:28px;left:22px}.float2{right:20px;bottom:28px}.float3{left:28px;bottom:38px}.section{padding:44px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.section h2{font-size:27px;margin:7px 0}.sub{color:var(--muted);line-height:1.6;margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-4px}.stat,.panel,.card{background:white;border:1px solid var(--line);border-radius:20px}.stat{padding:18px}.stat b{font-size:26px;color:var(--green);display:block}.stat span{font-size:13px;color:var(--muted)}.tabs{display:flex;gap:8px;flex-wrap:wrap}.tab{border:1px solid var(--line);border-radius:999px;padding:9px 15px;background:#fff;color:#607065}.tab.active{background:var(--green);color:#fff;border-color:var(--green)}.closet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.item{overflow:hidden}.item-photo{height:190px;display:flex;align-items:center;justify-content:center;font-size:76px;background:#f0f1eb}.item:nth-child(2) .item-photo{background:#f1e9e1}.item:nth-child(3) .item-photo{background:#e8edf0}.item:nth-child(4) .item-photo{background:#eee9f1}.item-body{padding:15px}.item-body h3{margin:0 0 6px;font-size:16px}.meta{font-size:12px;color:var(--muted)}.tag{display:inline-block;background:var(--mint);color:var(--green);font-size:11px;padding:5px 9px;border-radius:99px;margin-top:10px}.actions{display:flex;gap:8px;margin-top:12px}.smallbtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 10px;color:var(--green);font-size:12px;font-weight:700}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:22px}.feature .icon{font-size:28px}.feature h3{margin:12px 0 7px}.feature p{margin:0;color:var(--muted);line-height:1.6;font-size:14px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{padding:22px}.panel h3{margin:0 0 7px}.formrow{display:flex;gap:9px;margin-top:14px}.formrow input,.formrow select{min-width:0;flex:1;border:1px solid var(--line);border-radius:11px;padding:12px;background:#fff}.listing{display:flex;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}.listing:last-child{border:0}.listing .emoji{width:48px;height:48px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:25px}.listing .details{flex:1}.listing b{display:block}.listing small{color:var(--muted)}.price{font-weight:800;color:var(--green)}.impact{background:var(--green);color:white;border-radius:24px;padding:28px;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:16px;align-items:center}.impact p{color:#d7e4d9;line-height:1.6}.impact strong{font-size:28px;display:block}.impact small{color:#d7e4d9}.footer{padding:35px 0 45px;color:var(--muted);font-size:13px}.modal-bg{display:none;position:fixed;inset:0;background:#14251dcc;z-index:30;align-items:center;justify-content:center;padding:18px}.modal-bg.show{display:flex}.modal{background:white;border-radius:22px;padding:25px;width:min(480px,100%);box-shadow:0 25px 80px #0003}.modal h3{margin-top:0}.modal input,.modal select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:7px 0 14px}.toast{position:fixed;bottom:22px;right:22px;background:#263f30;color:white;padding:13px 18px;border-radius:12px;display:none;z-index:40;box-shadow:0 10px 30px #0002}.toast.show{display:block}
+.camera-tools{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0 12px}
+.camera-preview{width:100%;max-height:260px;object-fit:contain;background:#f0f1eb;border:1px dashed #cbd7cb;border-radius:14px;display:none;margin:8px 0}
+.camera-preview.visible{display:block}
+.photo-placeholder{border:1px dashed #cbd7cb;border-radius:14px;padding:18px;text-align:center;color:#718075;background:#f7f8f4;margin:8px 0}
+.item-photo img{width:100%;height:100%;max-height:190px;object-fit:cover}
+.modal .hint{font-size:12px;color:#718075;line-height:1.5;margin:0 0 12px}.account-label{font-size:13px;color:var(--green);font-weight:700}.danger{background:#fff;border:1px solid #e6c8c3;color:#a34e43;border-radius:999px;padding:10px 16px;font-weight:700}.account-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+@media(max-width:850px){.navlinks{display:none}.hero-grid,.two-col{grid-template-columns:1fr}.hero-art{min-height:260px}.closet-grid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.impact{grid-template-columns:repeat(3,1fr)}.impact>div:first-child{grid-column:1/-1}.feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.wrap{padding:0 16px}.nav{height:65px}.navright .pill{display:none}.hero{padding:38px 0}.hero h1{font-size:42px}.closet-grid{gap:10px}.item-photo{height:145px;font-size:60px}.feature-grid{grid-template-columns:1fr}.impact{grid-template-columns:1fr 1fr}.section{padding:32px 0}.section-head{align-items:start;flex-direction:column}}
+
+.stylist-studio{background:#f7f8f3;border:1px solid #e1e8df;border-radius:24px;padding:26px}
+.stylist-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.stylist-controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.stylist-controls select{border:1px solid #dce5db;background:#fff;border-radius:12px;padding:11px 13px;color:#33483a}
+.upload-actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+.upload-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:12px;margin:14px 0}
+.upload-piece{background:#fff;border:1px solid #e2e8e0;border-radius:15px;padding:9px;min-width:0}
+.upload-piece img{width:100%;height:125px;object-fit:cover;border-radius:10px;background:#f0f2ed}
+.upload-piece select{width:100%;margin-top:8px;border:1px solid #dce5db;border-radius:9px;padding:8px;background:#fff}
+.upload-piece button{margin-top:7px;width:100%}
+.outfit-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+.outfit-card{background:#fff;border:1px solid #e2e8e0;border-radius:18px;padding:16px}
+.outfit-card h3{margin:0 0 7px}
+.outfit-pieces{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.outfit-piece{width:82px}
+.outfit-piece img{width:82px;height:92px;object-fit:cover;border-radius:11px;background:#f0f2ed}
+.outfit-piece small{display:block;color:#718075;margin-top:4px;font-size:11px}
+.stylist-note{font-size:13px;line-height:1.6;color:#667568}
+@media(max-width:640px){.stylist-studio{padding:17px}.outfit-piece{width:72px}.outfit-piece img{width:72px;height:82px}}
+
+
+.rescue-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.rescue-option{border:1px solid var(--line);border-radius:14px;padding:13px;background:#fbfcf9;text-align:left;color:var(--ink)}.rescue-option b{display:block;color:var(--green);margin-bottom:5px}.rescue-option span{font-size:12px;color:var(--muted);line-height:1.45}.source-preview{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;margin:12px 0;max-width:360px}.source-preview img{width:82px;height:90px;object-fit:cover;border-radius:10px}.source-preview .source-emoji{width:82px;height:90px;display:grid;place-items:center;background:#f0f1eb;border-radius:10px;font-size:40px}.generated-piece{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;flex:1;min-width:125px}.generated-piece .piece-emoji{font-size:34px;display:block;margin-bottom:5px}.generated-piece small{color:var(--muted);line-height:1.4;display:block}.outfit-pieces{align-items:stretch}.outfit-card .outfit-pieces img{width:82px;height:92px;object-fit:cover;border-radius:11px}.rescue-option:hover{border-color:#9ab69c;background:#f2f7f0}
+@media(max-width:520px){.rescue-options{grid-template-columns:1fr}.stylist-controls select{width:100%}}
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap nav">
+  <div class="logo">RE<span>WEAR</span></div>
+  <nav class="navlinks"><a href="#closet">Tủ đồ của tôi</a><a href="#services">Dịch vụ tuần hoàn</a><a href="#exchange">Trao đổi</a><a href="#impact">Tác động xanh</a></nav>
+  <div class="navright"><span id="accountName" class="account-label" style="display:none"></span><button id="loginBtn" class="pill" onclick="openLogin()">Đăng nhập</button><button class="primary" onclick="openModal()">+ Thêm món đồ</button></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+ <div><div class="eyebrow">Circular fashion • Your digital closet</div><h1>Mặc đẹp hơn.<br><em>Mua ít hơn.</em></h1><p>REWEAR giúp bạn quản lý tủ đồ, phối những bộ trang phục mới từ quần áo sẵn có và tìm vòng đời tiếp theo cho món đồ bạn không còn sử dụng.</p><div class="hero-actions"><button class="primary" onclick="document.querySelector('#closet').scrollIntoView({behavior:'smooth'})">Khám phá tủ đồ</button><button class="secondary" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">Khám phá REWEAR</button></div></div>
+ <div class="hero-art"><div class="floating float1">🌿 <b>Thời trang tuần hoàn</b><br><span class="meta">Mỗi món đồ thêm một vòng đời</span></div><div class="hanger">👚</div><div class="floating float2">✨ AI Stylist<br><b>Gợi ý outfit mỗi ngày</b></div><div class="floating float3">♻️ <b>Đổi • Sửa • Tái sử dụng</b></div></div>
+</div></section>
+<section class="section"><div class="wrap stats">
+ <div class="stat"><b id="countItems">0</b><span>Món đồ trong tủ mẫu</span></div><div class="stat"><b id="topWear">0</b><span>Lượt mặc tháng này</span></div><div class="stat"><b id="topReusable">0</b><span>Món đồ có thể mặc lại</span></div><div class="stat"><b id="saved">0đ</b><span>Chi phí mua mới có thể tiết kiệm*</span></div>
+</div></section>
+<section class="section" id="closet"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">My digital closet</div><h2>Tủ đồ của bạn</h2><p class="sub">Quản lý những món đồ đang có và khám phá cách mặc chúng nhiều hơn.</p></div><button class="primary" onclick="openModal()">📷 Chụp / thêm quần áo</button></div>
+ <div class="tabs"><button class="tab active" onclick="filterItems('all',this)">Tất cả</button><button class="tab" onclick="filterItems('Áo',this)">Áo</button><button class="tab" onclick="filterItems('Quần',this)">Quần</button><button class="tab" onclick="filterItems('Phụ kiện',this)">Phụ kiện</button></div>
+ <div class="closet-grid" id="closetGrid" style="margin-top:18px">
+  <article class="card item" data-type="Áo"><div class="item-photo">👕</div><div class="item-body"><h3>Áo thun trắng</h3><div class="meta" data-wear-count="0">Áo • Mặc 0 lần</div><span class="tag">Dễ phối đồ</span><div class="actions"><button class="smallbtn" onclick="wear(this)">+ Đã mặc hôm nay</button><button class="smallbtn" onclick="rescue('Áo thun trắng')">Cứu món đồ</button></div></div></article>
+  <article class="card item" data-type="Quần"><div class="item-photo">👖</div><div class="item-body"><h3>Quần jeans xanh</h3><div class="meta" data-wear-count="0">Quần • Mặc 0 lần</div><span class="tag">Món đồ yêu thích</span><div class="actions"><button class="smallbtn" onclick="wear(this)">+ Đã mặc hôm nay</button><button class="smallbtn" onclick="rescue('Quần jeans xanh')">Cứu món đồ</button></div></div></article>
+  <article class="card item" data-type="Áo"><div class="item-photo">🧥</div><div class="item-body"><h3>Áo khoác be</h3><div class="meta" data-wear-count="0">Áo • Mặc 0 lần</div><span class="tag">Ít được sử dụng</span><div class="actions"><button class="smallbtn" onclick="wear(this)">+ Đã mặc hôm nay</button><button class="smallbtn" onclick="rescue('Áo khoác be')">Mở Rescue Closet</button></div></div></article>
+  <article class="card item" data-type="Phụ kiện"><div class="item-photo">👜</div><div class="item-body"><h3>Túi tote</h3><div class="meta" data-wear-count="0">Phụ kiện • Mặc 0 lần</div><span class="tag">Sử dụng thường xuyên</span><div class="actions"><button class="smallbtn" onclick="wear(this)">+ Đã dùng hôm nay</button><button class="smallbtn" onclick="rescue('Túi tote')">Cứu món đồ</button></div></div></article>
+ </div>
+</div></section>
+<section class="section" id="outfit"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">AI stylist • One item is enough</div><h2>AI Stylist – Phối đồ từ 1 món</h2><p class="sub">Chọn một món đồ trong tủ hoặc tải ảnh lên. REWEAR sẽ đề xuất những món còn lại để hoàn thiện outfit.</p></div></div>
+ <div class="stylist-studio">
+  <div class="stylist-top"><div><h3 style="margin:0 0 6px">Bắt đầu với món đồ bạn muốn mặc</h3><p class="sub" style="margin:0">Không cần tải cả tủ đồ – chỉ một món đồ là đủ.</p></div><span class="tag">✨ Gợi ý outfit cá nhân hóa</span></div>
+  <div class="stylist-controls">
+   <select id="stylistClosetSelect" aria-label="Chọn món đồ trong tủ"><option value="">Chọn một món trong tủ đồ…</option></select>
+   <select id="outfitItemType" aria-label="Loại món đồ"><option value="Áo">Áo</option><option value="Quần">Quần</option><option value="Váy">Váy</option><option value="Giày">Giày</option><option value="Phụ kiện">Phụ kiện</option></select>
+   <select id="outfitOccasion" aria-label="Dịp sử dụng"><option value="Đi học / đi làm">Đi học / đi làm</option><option value="Đi chơi">Đi chơi</option><option value="Hẹn hò">Hẹn hò</option><option value="Dự tiệc">Dự tiệc</option><option value="Du lịch">Du lịch</option></select>
+   <select id="outfitStyle" aria-label="Phong cách"><option value="Thanh lịch, tối giản">Thanh lịch, tối giản</option><option value="Năng động, trẻ trung">Năng động, trẻ trung</option><option value="Nữ tính, nhẹ nhàng">Nữ tính, nhẹ nhàng</option><option value="Cá tính, streetwear">Cá tính, streetwear</option></select>
+  </div>
+  <div class="upload-actions"><button class="secondary" type="button" onclick="document.getElementById('singleOutfitInput').click()">📷 Chụp / tải ảnh một món đồ</button><button class="secondary" type="button" onclick="clearStylistSource()">Bỏ chọn</button></div>
+  <input id="singleOutfitInput" type="file" accept="image/*" capture="environment" hidden onchange="handleSingleOutfit(event)">
+  <div id="stylistSourcePreview" class="photo-placeholder">Chưa chọn món đồ. Hãy chọn từ tủ hoặc tải một ảnh lên.</div>
+  <button class="primary" type="button" onclick="generateSingleItemOutfit()">✨ Gợi ý outfit cho tôi</button>
+  <p class="stylist-note" style="margin-top:12px">Bản demo tạo gợi ý dựa trên danh mục, dịp và phong cách; chưa kết nối mô hình AI trực tuyến để nhận diện chính xác màu sắc/chất liệu trong ảnh.</p>
+  <div id="outfitResults" class="outfit-results"></div>
+ </div>
+</div></section>
+<section class="section" style="background:#eef2eb" id="services"><div class="wrap"><div class="section-head"><div><div class="eyebrow">One closet, many possibilities</div><h2>Một món đồ – nhiều vòng đời</h2><p class="sub">REWEAR đề xuất hành động phù hợp thay vì để quần áo bị lãng quên.</p></div></div>
+ <div class="feature-grid">
+  <div class="card feature"><div class="icon">✨</div><h3>AI Stylist</h3><p>Gợi ý phối đồ từ tủ quần áo sẵn có theo hoàn cảnh, màu sắc và phong cách.</p><button class="smallbtn" style="margin-top:15px" onclick="document.querySelector('#outfit').scrollIntoView({behavior:'smooth'})">Gợi ý outfit</button></div>
+  <div class="card feature"><div class="icon">🧵</div><h3>Rescue Closet</h3><p>Phát hiện món đồ ít mặc và gợi ý sửa chữa, phối lại hoặc làm mới.</p><button class="smallbtn" style="margin-top:15px" onclick="rescue('Áo khoác be')">Mở Rescue Closet</button></div>
+  <div class="card feature"><div class="icon">♻️</div><h3>Re-Exchange</h3><p>Đăng bán, trao đổi hoặc tặng quần áo để món đồ tìm được chủ nhân mới.</p><button class="smallbtn" style="margin-top:15px" onclick="document.querySelector('#exchange').scrollIntoView({behavior:'smooth'})">Khám phá trao đổi</button></div>
+ </div>
+</div></section>
+<section class="section" id="exchange"><div class="wrap two-col">
+ <div class="panel"><div class="eyebrow">Re-exchange community</div><h2>Đồ cũ của bạn, món yêu thích của người khác</h2><p class="sub">Đăng món đồ bạn không còn sử dụng. Kết nối với cộng đồng để trao đổi, tặng hoặc bán lại.</p><div class="formrow"><input id="itemName" placeholder="Tên món đồ muốn trao đổi"><select id="itemAction"><option>Trao đổi</option><option>Tặng miễn phí</option><option>Bán lại</option></select></div><button class="primary" style="margin-top:12px" onclick="postItem()">Đăng món đồ</button></div>
+ <div class="panel"><h3>Đang được cộng đồng quan tâm</h3>
+  <div class="listing"><div class="emoji">👗</div><div class="details"><b>Váy hoa vintage</b><small>Size M • Tình trạng tốt</small></div><span class="price">Trao đổi</span></div>
+  <div class="listing"><div class="emoji">👟</div><div class="details"><b>Sneaker trắng</b><small>Size 38 • Đã vệ sinh</small></div><span class="price">250k</span></div>
+  <div class="listing"><div class="emoji">🎒</div><div class="details"><b>Balo canvas</b><small>Đã qua sử dụng • Còn tốt</small></div><span class="price">Tặng</span></div>
+  <div id="newListings"></div>
+ </div>
+</div></section>
+<section class="section" id="impact"><div class="wrap"><div class="impact"><div><div class="eyebrow" style="color:#c8ddc9">Your positive impact</div><h2 style="margin:8px 0">Mặc có ý thức,<br>sống có trách nhiệm.</h2><p>Mỗi lần sửa chữa, trao đổi hay mặc lại là một bước nhỏ hướng tới thời trang bền vững.</p><div class="account-actions" style="margin-top:10px"><button class="secondary" onclick="toggleImpactDetails()">Xem tổng kết chi tiết</button><button class="danger" onclick="resetStatistics()">↻ Reset số liệu</button></div></div><div><strong id="impactWear">0</strong><small>Lượt mặc được ghi nhận</small></div><div><strong id="impactRescued">00</strong><small>Món đồ được cứu</small></div><div><strong id="impactSaved">0đ</strong><small>Tiền mua mới có thể tiết kiệm*</small></div></div><div id="impactDetails" class="panel" style="display:none;margin-top:14px"><h3>Tổng kết hành trình thời trang xanh</h3><p class="sub">Các chỉ số được cập nhật khi bạn sử dụng những chức năng trong website.</p><div class="stats" style="margin-top:16px"><div class="stat"><b id="detailWear">0</b><span>Tổng lượt mặc lại</span></div><div class="stat"><b id="detailRescued">0</b><span>Món đồ đã được tái sử dụng / làm mới</span></div><div class="stat"><b id="detailSaved">0đ</b><span>Chi phí mua mới ước tính đã tiết kiệm</span></div><div class="stat"><b id="detailOutfits">0</b><span>Outfit đã được gợi ý</span></div></div><p class="meta" style="margin:14px 0 0">*Số tiền tiết kiệm là ước tính minh họa (150.000đ cho mỗi món đồ được cứu), không phải số liệu tài chính thực tế.</p></div><p class="meta" style="margin-top:10px">*Số liệu được lưu trên trình duyệt của thiết bị này. Bạn có thể reset bất cứ lúc nào.</p></div></section>
+</main>
+<footer class="footer"><div class="wrap" style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap"><div><b class="logo">RE<span>WEAR</span></b><p>Mặc nhiều hơn. Mua thông minh hơn. Thải bỏ ít hơn.</p></div><div>© 2026 REWEAR • Bản demo ý tưởng khởi nghiệp</div></div></footer>
+<div class="modal-bg" id="modalBg"><div class="modal">
+ <h3>Thêm món đồ vào tủ</h3>
+ <label>Tên món đồ</label><input id="newName" placeholder="Ví dụ: Áo sơ mi xanh">
+ <label>Danh mục</label><select id="newType"><option>Áo</option><option>Quần</option><option>Phụ kiện</option></select>
+ <label>Ảnh sản phẩm</label>
+ <div class="camera-tools">
+  <button class="smallbtn" type="button" onclick="startCamera()">📷 Mở camera</button>
+  <button class="smallbtn" type="button" onclick="document.getElementById('photoFile').click()">🖼️ Tải ảnh lên</button>
+  <button class="smallbtn" type="button" onclick="clearPhoto()">Xóa ảnh</button>
+ </div>
+ <input id="photoFile" type="file" accept="image/*" hidden onchange="loadPhoto(event)">
+ <video id="cameraVideo" class="camera-preview" autoplay playsinline></video>
+ <canvas id="cameraCanvas" hidden></canvas>
+ <img id="photoPreview" class="camera-preview" alt="Ảnh xem trước quần áo">
+ <div id="photoPlaceholder" class="photo-placeholder">Ảnh quần áo sẽ hiển thị ở đây</div>
+ <button id="captureBtn" class="primary" type="button" style="display:none;width:100%;margin-bottom:10px" onclick="capturePhoto()">Chụp ảnh</button>
+ <p class="hint">Để chụp ảnh trực tiếp, hãy cho phép trình duyệt truy cập camera. Nếu camera không mở được, bạn có thể tải ảnh từ thiết bị.</p>
+ <div style="display:flex;gap:10px;justify-content:flex-end"><button class="secondary" onclick="closeModal()">Hủy</button><button class="primary" onclick="addItem()">Lưu vào tủ</button></div>
+ </div></div>
+<div class="modal-bg" id="rescueBg"><div class="modal" style="max-width:560px"><h3>🧵 Rescue Closet</h3><p class="sub" id="rescueIntro">Cùng tìm vòng đời mới cho món đồ của bạn.</p><div id="rescueSuggestions" class="rescue-options"></div><div style="display:flex;justify-content:flex-end;margin-top:18px"><button class="secondary" onclick="closeRescue()">Đóng</button></div></div></div>
+<div class="modal-bg" id="loginBg"><div class="modal"><h3>Đăng nhập REWEAR</h3><p class="sub">Đăng nhập bản demo để lưu hồ sơ sử dụng trên trình duyệt này.</p><label>Họ và tên</label><input id="loginName" placeholder="Tên hiển thị"><label>Email</label><input id="loginEmail" type="email" placeholder="email@example.com"><label>Mật khẩu</label><input id="loginPassword" type="password" placeholder="Nhập mật khẩu"><p class="hint">Đây là đăng nhập mô phỏng: thông tin chỉ lưu cục bộ trên thiết bị, chưa có máy chủ xác thực và không nên dùng mật khẩu thật.</p><div style="display:flex;justify-content:flex-end;gap:9px"><button class="secondary" onclick="closeLogin()">Hủy</button><button class="primary" onclick="loginDemo()">Đăng nhập</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+let toastTimer;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800)}
+function openModal(){clearPhoto();document.getElementById('modalBg').classList.add('show')}
+function closeModal(){stopCamera();document.getElementById('modalBg').classList.remove('show')}
+
+let cameraStream=null;
+let selectedPhoto="";
+function stopCamera(){
+ if(cameraStream){cameraStream.getTracks().forEach(track=>track.stop());cameraStream=null;}
+ const video=document.getElementById('cameraVideo');
+ video.srcObject=null; video.classList.remove('visible');
+ document.getElementById('captureBtn').style.display='none';
+}
+async function startCamera(){
+ const video=document.getElementById('cameraVideo');
+ try{
+  stopCamera();
+  cameraStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false});
+  video.srcObject=cameraStream; video.classList.add('visible');
+  document.getElementById('photoPreview').classList.remove('visible');
+  document.getElementById('photoPlaceholder').style.display='none';
+  document.getElementById('captureBtn').style.display='block';
+  toast('Camera đã mở. Hãy căn chỉnh quần áo rồi bấm Chụp ảnh.');
+ }catch(err){
+  toast('Không mở được camera. Hãy cấp quyền camera hoặc tải ảnh từ thiết bị nhé.');
+ }
+}
+function capturePhoto(){
+ const video=document.getElementById('cameraVideo');
+ if(!video.videoWidth){toast('Camera đang khởi động, bạn thử lại sau một chút nhé.');return;}
+ const canvas=document.getElementById('cameraCanvas');
+ const maxWidth=1000, scale=Math.min(1,maxWidth/video.videoWidth);
+ canvas.width=Math.round(video.videoWidth*scale); canvas.height=Math.round(video.videoHeight*scale);
+ canvas.getContext('2d').drawImage(video,0,0,canvas.width,canvas.height);
+ selectedPhoto=canvas.toDataURL('image/jpeg',0.82);
+ showPhotoPreview(selectedPhoto); stopCamera();
+ toast('Đã chụp ảnh! Bạn có thể lưu món đồ vào tủ.');
+}
+function loadPhoto(event){
+ const file=event.target.files && event.target.files[0];
+ if(!file)return;
+ if(!file.type.startsWith('image/')){toast('Vui lòng chọn một tệp ảnh.');return;}
+ const reader=new FileReader();
+ reader.onload=()=>{selectedPhoto=reader.result;showPhotoPreview(selectedPhoto);stopCamera();};
+ reader.readAsDataURL(file);
+}
+function showPhotoPreview(src){
+ const img=document.getElementById('photoPreview');
+ img.src=src;img.classList.add('visible');
+ document.getElementById('photoPlaceholder').style.display='none';
+ document.getElementById('cameraVideo').classList.remove('visible');
+ document.getElementById('captureBtn').style.display='none';
+}
+function clearPhoto(){
+ selectedPhoto="";
+ document.getElementById('photoPreview').src="";
+ document.getElementById('photoPreview').classList.remove('visible');
+ document.getElementById('photoPlaceholder').style.display='block';
+ document.getElementById('photoFile').value="";
+ stopCamera();
+}
+function addItem(){
+ let name=document.getElementById('newName').value.trim(),type=document.getElementById('newType').value;
+ if(!name){toast('Bạn hãy nhập tên món đồ nhé!');return}
+ let card=document.createElement('article');card.className='card item';card.dataset.type=type;
+ const photo=selectedPhoto
+  ? `<img src="${selectedPhoto}" alt="Ảnh ${name.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}">`
+  : '<span>👕</span>';
+ card.innerHTML=`<div class="item-photo">${photo}</div><div class="item-body"><h3></h3><div class="meta" data-wear-count="0">${type} • Mặc 0 lần</div><span class="tag">Vừa thêm vào tủ</span><div class="actions"><button class="smallbtn" onclick="wear(this)">+ Đã mặc hôm nay</button><button class="smallbtn" onclick="rescue('Món đồ mới')">Cứu món đồ</button></div></div>`;
+ card.querySelector('h3').textContent=name;
+ document.getElementById('closetGrid').appendChild(card);refreshStylistCloset();
+ addedClosetItems++;document.getElementById('countItems').textContent=addedClosetItems;persistDemoData();
+ document.getElementById('newName').value='';clearPhoto();closeModal();
+ toast('Đã thêm '+name+' vào tủ đồ!');
+}
+function filterItems(type,btn){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.item').forEach(x=>x.style.display=(type==='all'||x.dataset.type===type)?'':'none')}
+const impactState={wear:0,rescued:0,saved:0,outfits:0};
+let addedClosetItems=0;
+let currentAccount=null;
+function persistDemoData(){try{localStorage.setItem('rewear_impact_stats',JSON.stringify(impactState));localStorage.setItem('rewear_added_items',String(addedClosetItems));}catch(e){}}
+function loadDemoData(){try{const saved=JSON.parse(localStorage.getItem('rewear_impact_stats')||'null');if(saved){impactState.wear=Number(saved.wear)||0;impactState.rescued=Number(saved.rescued)||0;impactState.saved=Number(saved.saved)||0;impactState.outfits=Number(saved.outfits)||0;}addedClosetItems=Number(localStorage.getItem('rewear_added_items'))||0;}catch(e){}}
+function openLogin(){if(currentAccount){if(confirm('Bạn muốn đăng xuất khỏi REWEAR?')){currentAccount=null;localStorage.removeItem('rewear_demo_account');renderAccount();toast('Đã đăng xuất.');}return;}document.getElementById('loginBg').classList.add('show');}
+function closeLogin(){document.getElementById('loginBg').classList.remove('show');}
+function loginDemo(){const name=document.getElementById('loginName').value.trim();const email=document.getElementById('loginEmail').value.trim();const password=document.getElementById('loginPassword').value;if(!name||!email||!password){toast('Vui lòng nhập đầy đủ thông tin.');return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){toast('Email chưa đúng định dạng.');return;}currentAccount={name,email};try{localStorage.setItem('rewear_demo_account',JSON.stringify(currentAccount));}catch(e){}renderAccount();closeLogin();toast('Chào mừng '+name+' đến với REWEAR!');}
+function renderAccount(){const label=document.getElementById('accountName'),btn=document.getElementById('loginBtn');if(currentAccount){label.textContent='Xin chào, '+currentAccount.name;label.style.display='inline';btn.textContent='Đăng xuất';}else{label.style.display='none';btn.textContent='Đăng nhập';}}
+function resetStatistics(){if(!confirm('Bạn có chắc muốn đưa toàn bộ số liệu thống kê về 0? Thao tác này không thể hoàn tác.'))return;impactState.wear=0;impactState.rescued=0;impactState.saved=0;impactState.outfits=0;addedClosetItems=0;document.querySelectorAll('#closetGrid .item .meta').forEach(meta=>{meta.dataset.wearCount='0';const type=meta.textContent.split(' • ')[0]||'Món đồ';meta.textContent=type+' • Mặc 0 lần'});updateImpact();document.getElementById('countItems').textContent='0';persistDemoData();toast('Đã reset toàn bộ số liệu và số lần mặc của từng món đồ về 0.');}
+try{currentAccount=JSON.parse(localStorage.getItem('rewear_demo_account')||'null');}catch(e){currentAccount=null;}loadDemoData();renderAccount();
+function formatMoney(n){return n.toLocaleString('vi-VN')+'đ'}
+function updateImpact(){
+ document.getElementById('countItems').textContent=addedClosetItems;
+ document.getElementById('topWear').textContent=impactState.wear;
+ document.getElementById('topReusable').textContent=impactState.rescued;
+ document.getElementById('saved').textContent=impactState.saved===0?'0đ':(impactState.saved/1000).toLocaleString('vi-VN')+'k';
+ document.getElementById('impactWear').textContent=impactState.wear;
+ document.getElementById('impactRescued').textContent=String(impactState.rescued).padStart(2,'0');
+ document.getElementById('impactSaved').textContent=impactState.saved===0?'0đ':(impactState.saved/1000).toLocaleString('vi-VN')+'k';
+ document.getElementById('detailWear').textContent=impactState.wear;
+ document.getElementById('detailRescued').textContent=impactState.rescued;
+ document.getElementById('detailSaved').textContent=formatMoney(impactState.saved);
+ document.getElementById('detailOutfits').textContent=impactState.outfits;
+ persistDemoData();
+}
+updateImpact();
+function toggleImpactDetails(){const box=document.getElementById('impactDetails');box.style.display=box.style.display==='none'?'block':'none'}
+function wear(btn){impactState.wear++;let card=btn.closest('.item');let meta=card.querySelector('.meta');let count=Number(meta.dataset.wearCount||0)+1;meta.dataset.wearCount=String(count);let type=(meta.textContent.split(' • ')[0]||card.dataset.type||'Món đồ');meta.textContent=type+' • Mặc '+count+' lần';updateImpact();toast('Đã ghi nhận! Món đồ này đã được mặc '+count+' lần.')}
+function rescue(name){
+ const bg=document.getElementById('rescueBg');
+ document.getElementById('rescueIntro').textContent='Đang xem xét: '+name+'. Chọn cách bạn muốn làm mới món đồ này:';
+ const options=[
+  ['✨','Phối lại theo cách mới','Tìm outfit khác từ món đồ này.','stylist'],
+  ['🪡','Sửa chữa','Gợi ý kiểm tra đường may, khóa kéo, cúc áo hoặc chỗ sờn rách.','repair'],
+  ['🎨','Làm mới / tái chế','Thử nhuộm màu, cắt chỉnh, thêu hoặc biến tấu thành món đồ khác.','refresh'],
+  ['♻️','Bán / trao đổi / tặng','Đưa món đồ đến với người có nhu cầu sử dụng.','exchange']
+ ];
+ const box=document.getElementById('rescueSuggestions');box.innerHTML='';
+ options.forEach(([emoji,title,desc,action])=>{const b=document.createElement('button');b.className='rescue-option';b.innerHTML=`<b>${emoji} ${title}</b><span>${desc}</span>`;b.onclick=()=>rescueAction(name,action);box.appendChild(b)});
+ bg.classList.add('show');
+}
+function closeRescue(){document.getElementById('rescueBg').classList.remove('show')}
+function rescueAction(name,action){
+ closeRescue();
+ impactState.rescued++;impactState.saved+=150000;updateImpact();
+ if(action==='stylist'){
+  const select=document.getElementById('stylistClosetSelect');
+  const match=[...select.options].find(o=>o.textContent===name);
+  if(match)select.value=match.value;
+  document.getElementById('outfit').scrollIntoView({behavior:'smooth'});
+  toast('Đã chuyển '+name+' sang AI Stylist để phối lại.');
+ }else if(action==='exchange'){
+  document.getElementById('itemName').value=name;
+  document.getElementById('exchange').scrollIntoView({behavior:'smooth'});
+  toast('Đã điền tên món đồ. Bạn chọn bán, trao đổi hoặc tặng nhé.');
+ }else if(action==='repair'){
+  toast('Checklist sửa chữa cho '+name+': kiểm tra đường may, cúc/khóa kéo và vết sờn trước khi mang tới tiệm.');
+ }else{
+  toast('Ý tưởng làm mới '+name+': thay cúc, thêm chi tiết thêu hoặc chỉnh form để dễ mặc hơn.');
+ }
+}
+
+let selectedStylistItem=null;
+let selectedStylistPhoto='';
+function refreshStylistCloset(){
+ const select=document.getElementById('stylistClosetSelect');if(!select)return;
+ const current=select.value;select.innerHTML='<option value="">Chọn một món trong tủ đồ…</option>';
+ document.querySelectorAll('#closetGrid .item').forEach((card,index)=>{
+  const name=card.querySelector('h3')?.textContent||'Món đồ '+(index+1);
+  const type=card.dataset.type||'Áo';const opt=document.createElement('option');opt.value='closet-'+index;opt.textContent=name;opt.dataset.name=name;opt.dataset.type=type;select.appendChild(opt);
+ });
+ if([...select.options].some(o=>o.value===current))select.value=current;
+}
+function showStylistSource(){
+ const preview=document.getElementById('stylistSourcePreview');
+ if(selectedStylistPhoto){preview.className='source-preview';preview.innerHTML='';const img=document.createElement('img');img.src=selectedStylistPhoto;const label=document.createElement('b');label.textContent='Ảnh món đồ bạn chọn';preview.append(img,label);}
+ else if(selectedStylistItem){preview.className='source-preview';preview.innerHTML='';const emoji=document.createElement('div');emoji.className='source-emoji';emoji.textContent=selectedStylistItem.emoji;const info=document.createElement('div');const b=document.createElement('b');b.textContent=selectedStylistItem.name;const small=document.createElement('small');small.textContent=selectedStylistItem.type+' • Món đồ làm điểm nhấn';info.append(b,small);preview.append(emoji,info);}
+ else{preview.className='photo-placeholder';preview.textContent='Chưa chọn món đồ. Hãy chọn từ tủ hoặc tải một ảnh lên.';}
+}
+document.getElementById('stylistClosetSelect').addEventListener('change',e=>{
+ selectedStylistPhoto='';const opt=e.target.selectedOptions[0];
+ if(!opt||!opt.value){selectedStylistItem=null;showStylistSource();return;}
+ const index=Number(opt.value.replace('closet-',''));const card=document.querySelectorAll('#closetGrid .item')[index];
+ const image=card?.querySelector('.item-photo img');const emoji=card?.querySelector('.item-photo')?.textContent.trim()||'👕';
+ selectedStylistItem={name:card?.querySelector('h3')?.textContent||opt.textContent,type:card?.dataset.type||'Áo',emoji,image:image?.src||''};document.getElementById('outfitItemType').value=selectedStylistItem.type;showStylistSource();
+});
+function handleSingleOutfit(event){const file=event.target.files?.[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Vui lòng chọn tệp ảnh.');return;}const reader=new FileReader();reader.onload=()=>{selectedStylistPhoto=reader.result;selectedStylistItem=null;document.getElementById('stylistClosetSelect').value='';showStylistSource();};reader.readAsDataURL(file);event.target.value='';}
+function clearStylistSource(){selectedStylistItem=null;selectedStylistPhoto='';document.getElementById('stylistClosetSelect').value='';document.getElementById('outfitResults').innerHTML='';showStylistSource();}
+function generateSingleItemOutfit(){
+ if(!selectedStylistItem&&!selectedStylistPhoto){toast('Hãy chọn một món đồ trong tủ hoặc tải lên một ảnh nhé!');return;}
+ const occasion=document.getElementById('outfitOccasion').value,style=document.getElementById('outfitStyle').value;
+ const type=selectedStylistItem?.type||document.getElementById('outfitItemType').value;const name=selectedStylistItem?.name||'Món đồ của bạn';
+ let pieces=[];
+ if(type==='Áo')pieces=[['👖','Quần ống suông / jeans','Chọn màu trung tính để cân bằng phần áo.'],['👟','Giày sneaker hoặc loafer','Giúp tổng thể hài hòa và phù hợp lịch trình.'],['👜','Túi tối giản','Hoàn thiện outfit mà không làm rối mắt.']];
+ else if(type==='Quần')pieces=[['👚','Áo thun / sơ mi','Chọn dáng áo cân đối với phom quần.'],['👟','Giày phù hợp','Sneaker cho vẻ năng động, loafer cho vẻ thanh lịch.'],['🧥','Áo khoác nhẹ','Tạo lớp trang phục và điểm nhấn.']];
+ else if(type==='Váy')pieces=[['🧥','Cardigan / blazer','Tạo điểm nhấn và cân bằng tổng thể.'],['👡','Giày bệt / sneaker','Chọn theo mức độ trang trọng của dịp.'],['👜','Túi nhỏ','Giữ phụ kiện gọn nhẹ.']];
+ else if(type==='Giày')pieces=[['👖','Quần jeans / quần suông','Chọn độ dài để làm nổi bật đôi giày.'],['👕','Áo basic','Tạo nền đơn giản cho đôi giày.'],['🎒','Túi cùng tông','Liên kết màu sắc toàn bộ outfit.']];
+ else pieces=[['👕','Áo basic','Ưu tiên kiểu dáng đơn giản để món phụ kiện nổi bật.'],['👖','Quần jeans / chân váy','Chọn phom dễ mặc, màu trung tính.'],['👟','Giày tối giản','Giữ tổng thể cân đối.']];
+ if(occasion==='Dự tiệc'){pieces[0]=['👔','Áo / quần có phom chỉn chu','Ưu tiên chất liệu đứng dáng, màu sắc hài hòa.'];pieces[1]=['👠','Giày thanh lịch','Tăng vẻ chỉn chu cho dịp đặc biệt.'];}
+ if(style==='Năng động, trẻ trung'){pieces[1]=['👟','Sneaker','Tạo cảm giác thoải mái, trẻ trung.'];}
+ if(style==='Nữ tính, nhẹ nhàng'){pieces[2]=['🎀','Phụ kiện nhỏ','Tạo điểm nhấn mềm mại, tinh tế.'];}
+ if(style==='Cá tính, streetwear'){pieces[0]=['🧢','Áo / quần form rộng','Tạo lớp phối phóng khoáng, cá tính.'];pieces[2]=['🎒','Túi đeo chéo','Hoàn thiện phong cách streetwear.'];}
+ const results=document.getElementById('outfitResults');results.innerHTML='';
+ const card=document.createElement('article');card.className='outfit-card';
+ const h=document.createElement('h3');h.textContent='Outfit gợi ý cho bạn';const meta=document.createElement('div');meta.className='meta';meta.textContent=occasion+' • '+style;
+ const row=document.createElement('div');row.className='outfit-pieces';
+ const anchor=document.createElement('div');anchor.className='generated-piece';
+ if(selectedStylistPhoto){const img=document.createElement('img');img.src=selectedStylistPhoto;img.alt='Món đồ được chọn';anchor.append(img);}else if(selectedStylistItem.image){const img=document.createElement('img');img.src=selectedStylistItem.image;img.alt=name;anchor.append(img);}else{const em=document.createElement('span');em.className='piece-emoji';em.textContent=selectedStylistItem.emoji;anchor.append(em);}
+ const anchorName=document.createElement('b');anchorName.textContent=name;const anchorSmall=document.createElement('small');anchorSmall.textContent='Món đồ bạn đã chọn';anchor.append(anchorName,anchorSmall);row.append(anchor);
+ pieces.forEach(([emoji,title,desc])=>{const piece=document.createElement('div');piece.className='generated-piece';const em=document.createElement('span');em.className='piece-emoji';em.textContent=emoji;const b=document.createElement('b');b.textContent=title;const small=document.createElement('small');small.textContent=desc;piece.append(em,b,small);row.append(piece)});
+ const note=document.createElement('p');note.className='stylist-note';note.textContent='REWEAR đề xuất kết hợp '+name+' với các món gợi ý trên. Hãy ưu tiên món tương tự đang có trong tủ để hạn chế mua mới.';
+ card.append(h,meta,row,note);results.append(card);impactState.outfits++;updateImpact();toast('Đã tạo outfit từ một món đồ!');
+}
+refreshStylistCloset();
+updateImpact();
+
+document.getElementById('modalBg').addEventListener('click',e=>{if(e.target.id==='modalBg')closeModal()});
+document.getElementById('rescueBg').addEventListener('click',e=>{if(e.target.id==='rescueBg')closeRescue()});
+document.getElementById('loginBg').addEventListener('click',e=>{if(e.target.id==='loginBg')closeLogin()});
+</script>
+</body>
+</html>
